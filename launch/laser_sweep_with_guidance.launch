@@ -1,0 +1,11 @@
+<launch>
+
+
+
+<include file="$(find laser_sweep_with_guidance)/launch/GuidanceNode.launch" />
+<include file="$(find laser_sweep_with_guidance)/launch/start.launch" />
+<include file="$(find laser_sweep_with_guidance)/launch/loam_back_and_forth.launch" />
+
+
+
+</launch>

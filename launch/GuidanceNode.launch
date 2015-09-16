@@ -1,0 +1,7 @@
+<launch>
+
+	<node name="GuidanceNode" pkg="laser_sweep_with_guidance" type="GuidanceNode"/>
+	
+
+		
+</launch>

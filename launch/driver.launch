@@ -1,0 +1,8 @@
+<launch>
+
+	<include file="$(find laser_sweep_with_guidance)/launch/manager.launch" />
+	<include file="$(find laser_sweep_with_guidance)/launch/controller.launch" />
+	<include file="$(find laser_sweep_with_guidance)/launch/hokuyo.launch" />
+	<include file="$(find laser_sweep_with_guidance)/launch/scan2pcl.launch" />
+
+</launch>

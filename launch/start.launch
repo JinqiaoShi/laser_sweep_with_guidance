@@ -1,0 +1,16 @@
+<launch>
+
+	<!--node name="base_stp" pkg="tf" type="static_transform_publisher" args="0 0 0 0 1.570796327 -1.570796327 /camera /dxl_base  100"/ -->
+	<node name="base_stp" pkg="tf" type="static_transform_publisher" args="0 0 0.12 0 0 0 /camera /dxl_base  100"/>
+	<node name="laser_stp" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 /dxl_rotor /laser_link 100"/>
+
+<include file="$(find laser_sweep_with_guidance)/launch/driver.launch" />
+
+	<!-- Start the sweeper -->
+	<node name="sweeper" pkg="laser_sweep_with_guidance" type="sweep_node">
+		<remap from="status" to="/sweep_controller/state" />
+		<remap from="command" to="/sweep_controller/command" />
+	</node>
+
+
+</launch>

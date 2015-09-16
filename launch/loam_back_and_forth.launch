@@ -1,0 +1,22 @@
+<launch>
+
+
+
+
+
+	<node pkg="laser_sweep_with_guidance" type="scanRegistration" name="scanRegistration" output="screen">
+
+	<remap from="imu/data" to="microstrain/imu" />
+	</node>
+	<node pkg="laser_sweep_with_guidance" type="laserOdometry" name="laserOdometry" output="screen">
+
+
+		<remap from="tf" to="tf_loam" />
+	</node>
+	<node pkg="laser_sweep_with_guidance" type="laserMapping" name="laserMapping" output="screen"/>
+
+	
+        <node pkg="laser_sweep_with_guidance" type="transformMaintenance" name="transformMaintenance" output="screen"/>
+	<node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find laser_sweep_with_guidance)/launch/laser_sweep_with_guidance.rviz"/>
+
+</launch>
